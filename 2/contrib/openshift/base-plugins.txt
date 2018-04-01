@@ -62,3 +62,7 @@ blueocean:1.4.1
 # 2.4 brought in pipeline-milestone-step
 workflow-aggregator:2.5
 
+# Additional plugins from  - https://antonfisher.com/posts/2017/01/16/run-jenkins-in-docker-container-with-persistent-configuration/
+scm-sync-configuration:0.0.10
+workflow-aggregator:2.4
+docker-workflow:1.8
