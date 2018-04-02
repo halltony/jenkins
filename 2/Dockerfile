@@ -50,6 +50,16 @@ RUN echo "    IdentityFile $HOME/.ssh/id_rsa" >> /etc/ssh/ssh_config &&\
     echo "    StrictHostKeyChecking no      " >> /etc/ssh/ssh_config
 RUN /bin/bash -c "eval '$(ssh-agent -s)'; ssh-add $HOME/.ssh/id_rsa;"
 
+# Configure git
+RUN git config --global user.email "a.j.hall@blueyonder.co.uk" &&\
+    git config --global user.name  "jenkins"
+
+# Clone _Jenkins_ config
+RUN cd /tmp &&\
+    git clone git@github.com:$GITHUB_USERNAME/$GITHUB_CONFIG_REPOSITORY.git &&\
+    cp -r $GITHUB_CONFIG_REPOSITORY/. $JENKINS_HOME &&\
+    rm -r /tmp/$GITHUB_CONFIG_REPOSITORY
+
 COPY ./contrib/openshift /opt/openshift
 COPY ./contrib/jenkins /usr/local/bin
 ADD ./contrib/s2i /usr/libexec/s2i
