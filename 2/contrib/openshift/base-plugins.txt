@@ -55,7 +55,7 @@ github-organization-folder:1.6
 
 # Jenkins v2 specific
 matrix-auth:2.2
-blueocean:1.4.1
+blueocean:1.4.2
 
 # Pipeline plugin - https://wiki.jenkins-ci.org/display/JENKINS/Pipeline+Plugin
 # 2.5 now includes pipeline-model-definition (declaritive pipeline)
@@ -64,4 +64,4 @@ workflow-aggregator:2.5
 
 # Additional plugins from  - https://antonfisher.com/posts/2017/01/16/run-jenkins-in-docker-container-with-persistent-configuration/
 scm-sync-configuration:0.0.10
-docker-workflow:1.8
+docker-pipeline:1.15.1
