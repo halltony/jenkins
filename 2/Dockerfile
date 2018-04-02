@@ -42,8 +42,8 @@ RUN curl https://pkg.jenkins.io/redhat-stable/jenkins.repo -o /etc/yum.repos.d/j
     localedef -f UTF-8 -i en_US en_US.UTF-8
 
 # Add secrets for SSH keys used to retrieve jenkins config from github
-COPY /mnt/sda1/keys/jenkins.config.id_rsa     $HOME/.ssh/id_rsa
-COPY /mnt/sda1/keys/jenkins.config.id_rsa.pub $HOME/.ssh/id_rsa.pub
+COPY /keys/jenkins.config.id_rsa     $HOME/.ssh/id_rsa
+COPY /keys/jenkins.config.id_rsa.pub $HOME/.ssh/id_rsa.pub
 RUN chmod 600 $HOME/.ssh/id_rsa &&\
     chmod 600 $HOME/.ssh/id_rsa.pub
 RUN echo "    IdentityFile $HOME/.ssh/id_rsa" >> /etc/ssh/ssh_config &&\
