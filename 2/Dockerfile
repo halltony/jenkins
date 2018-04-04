@@ -22,6 +22,10 @@ ENV JENKINS_VERSION=2 \
     LANG=en_US.UTF-8 \
     LC_ALL=en_US.UTF-8
 
+# GitHub repository to store _Jenkins_ configuration
+ENV GITHUB_USERNAME=halltony \
+    GITHUB_CONFIG_REPOSITORY=my-jenkins-config
+
 LABEL k8s.io.description="Jenkins is a continuous integration server" \
       k8s.io.display-name="Jenkins 2" \
       openshift.io.expose-services="8080:http" \
